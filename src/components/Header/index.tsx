@@ -1,7 +1,7 @@
 import React from "react";
 import * as Styles from "./styles";
 import logo from "../../assets/logo.svg";
-import { FaSearch } from "react-icons/fa";
+import { FaSearch, FaStar } from "react-icons/fa";
 
 const Header: React.FC = () => {
   return (
@@ -11,12 +11,18 @@ const Header: React.FC = () => {
           <Styles.HeaderLogo src={logo} />
           <Styles.LogoTitle>MovieDB</Styles.LogoTitle>
         </Styles.LogoWrapper>
-        <Styles.SearchBox>
-          <Styles.SearchInput type="search"></Styles.SearchInput>
-          <Styles.SearchButton>
-            <FaSearch />
-          </Styles.SearchButton>
-        </Styles.SearchBox>
+        <Styles.MenuWrapper>
+          <Styles.SearchBox>
+            <Styles.SearchInput
+              type="search"
+              placeholder="Procure seu filme aqui..."
+            ></Styles.SearchInput>
+            <Styles.SearchButton>
+              <FaSearch />
+            </Styles.SearchButton>
+          </Styles.SearchBox>
+          <FaStar />
+        </Styles.MenuWrapper>
       </Styles.Header>
     </Styles.HeaderContainer>
   );

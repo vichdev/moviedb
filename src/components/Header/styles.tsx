@@ -29,6 +29,21 @@ export const HeaderLogo = styled.img`
   height: 90px;
 `;
 
+export const MenuWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  width: 400px;
+  justify-content: space-evenly;
+  svg {
+    font-size: 20px;
+    color: #fff;
+    transition: 0.4s;
+    &:hover {
+      color: var(--red);
+    }
+  }
+`;
+
 export const SearchBox = styled.div`
   background: none;
   height: 40px;
@@ -45,11 +60,10 @@ export const SearchInput = styled.input`
   background: none;
   border-radius: 3px;
   padding: 1rem;
-  color: #fff;
+  color: #a39f9f;
   font-size: 1rem;
   font-weight: bold;
   align-items: center;
-
   ::-webkit-search-cancel-button {
     display: none;
   }
