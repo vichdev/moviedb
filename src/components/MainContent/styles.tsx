@@ -58,7 +58,7 @@ export const Movie = styled.div<{ isActive?: boolean }>`
     float: right;
     top: 10px;
     right: 10px;
-    color: ${(props) => (props.isActive ? "orange" : "#fff")};
+    color: ${(props) => (props.isActive ? "yellow" : "#fff")};
     z-index: 10;
     font-size: 20px;
     transition: 0.3s;

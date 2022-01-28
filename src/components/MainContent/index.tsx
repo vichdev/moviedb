@@ -26,7 +26,7 @@ const MainContent: React.FC = () => {
           <FaStar />
           <Styles.MovieDescriptionWrapper>
             <Styles.MovieTitle>Homem Aranha</Styles.MovieTitle>
-            <Styles.MovieRating color={average}>9.3</Styles.MovieRating>
+            <Styles.MovieRating>9.3</Styles.MovieRating>
           </Styles.MovieDescriptionWrapper>
           <Styles.MovieOverview></Styles.MovieOverview>
         </Styles.Movie>
