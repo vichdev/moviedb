@@ -16,12 +16,14 @@ const Header: React.FC = () => {
             <Styles.SearchInput
               type="search"
               placeholder="Procure seu filme aqui..."
-            ></Styles.SearchInput>
+            />
             <Styles.SearchButton>
               <FaSearch />
             </Styles.SearchButton>
           </Styles.SearchBox>
-          <FaStar />
+          <Styles.FavoriteButton to="/Favorite">
+            <FaStar />
+          </Styles.FavoriteButton>
         </Styles.MenuWrapper>
       </Styles.Header>
     </Styles.HeaderContainer>

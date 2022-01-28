@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const HeaderContainer = styled.div``;
@@ -43,6 +44,8 @@ export const MenuWrapper = styled.div`
     }
   }
 `;
+
+export const FavoriteButton = styled(Link)``;
 
 export const SearchBox = styled.div`
   background: none;
