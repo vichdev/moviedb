@@ -21,8 +21,17 @@ export const LogoWrapper = styled.div`
   justify-content: space-around;
 `;
 
-export const LogoTitle = styled.h1`
+export const LogoTitle = styled(Link)`
   font-size: 2rem;
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+  transition: 0.3s;
+  text-shadow: 0.1em 0.1em 0 #000;
+  &:hover {
+    color: var(--text);
+    opacity: 0.8;
+  }
 `;
 
 export const HeaderLogo = styled.img`
@@ -46,6 +55,11 @@ export const MenuWrapper = styled.div`
 `;
 
 export const FavoriteButton = styled(Link)``;
+
+export const FavoriteTitle = styled.h1`
+  color: var(--text);
+  text-shadow: 0.1em 0.1em 0 #000;
+`;
 
 export const SearchBox = styled.div`
   background: none;
