@@ -80,7 +80,8 @@ export const SearchButton = styled.button`
   justify-content: center;
   align-items: center;
   svg {
-    color: var(--red);
+    color: var(--text);
+    font-size: 1rem;
     background: none;
     border: none;
   }
