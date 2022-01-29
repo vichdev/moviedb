@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import styled from "styled-components";
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 export const HeaderContainer = styled.div``;
 
@@ -49,7 +49,7 @@ export const MenuWrapper = styled.div`
     color: #fff;
     transition: 0.4s;
     &:hover {
-      color: var(--red);
+      color: red;
     }
   }
 `;

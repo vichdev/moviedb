@@ -1,35 +1,27 @@
-import React, { useState } from "react";
-import * as Styles from "./styles";
-import movie from "../../assets/filme01.jpg";
-import { FaStar } from "react-icons/fa";
+import React from 'react';
+import * as Styles from './styles';
+import { useMovieContext } from '../../context/moviecontext';
+import MovieContent from '../MovieContent';
 
 const MainContent: React.FC = () => {
-  const [average, setAverage] = useState<string>("");
-
-  const setAverageColor = (average: number) => {
-    if (average >= 8) {
-      setAverage("green");
-    } else if (average >= 6) {
-      setAverage("orange");
-    } else {
-      setAverage("red");
-    }
-  };
+  const { movies } = useMovieContext();
 
   return (
     <Styles.MovieContainer>
       <Styles.MainTitle>Mais populares</Styles.MainTitle>
       <Styles.PAnimated />
       <Styles.MoviesWrapper>
-        <Styles.Movie>
-          <Styles.MovieImg src={movie} />
-          <FaStar />
-          <Styles.MovieDescriptionWrapper>
-            <Styles.MovieTitle>Homem Aranha</Styles.MovieTitle>
-            <Styles.MovieRating>9.3</Styles.MovieRating>
-          </Styles.MovieDescriptionWrapper>
-          <Styles.MovieOverview></Styles.MovieOverview>
-        </Styles.Movie>
+        {movies &&
+          movies?.map((c) => (
+            <MovieContent
+              key={c.id}
+              id={c.id}
+              poster={c.poster_path}
+              title={c.title}
+              vote_average={c.vote_average}
+              overview={c.overview}
+            />
+          ))}
       </Styles.MoviesWrapper>
     </Styles.MovieContainer>
   );

@@ -1,4 +1,11 @@
-export interface IPropsMovies {}
+/* eslint-disable no-empty-pattern */
+export interface IPropsMovies {
+  movies?: Array<MovieInfo.Result>;
+  setMovies: ([]) => void;
+  search?: string;
+  setSearch: (search: string) => void;
+  fetchData: (movie: string) => void;
+}
 
 export declare module MovieInfo {
   export interface Result {
@@ -17,11 +24,11 @@ export declare module MovieInfo {
     video: boolean;
     vote_average: number;
   }
-
   export interface RootObject {
     page: number;
     results: Result[];
     total_results: number;
     total_pages: number;
   }
+
 }
