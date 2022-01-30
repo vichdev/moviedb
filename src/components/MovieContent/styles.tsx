@@ -12,7 +12,8 @@ export const Movie = styled.div<{ isActive?: boolean; isFavorite?: boolean }>`
   margin-bottom: 5rem;
 
   &:hover {
-    /* box-shadow: 0px 0px 5px 1px var(--red); */
+    box-shadow: 0px 0px 5px 0.5px var(--red);
+    top: -5px;
     svg {
       display: block;
     }
@@ -65,8 +66,9 @@ export const MovieRating = styled.p<{ color?: string }>`
   font-size: 1rem;
   font-weight: bold;
   justify-content: center;
+  border-radius: 50%;
   text-align: center;
   padding: 9px;
   color: ${(props) => (props.color ? props.color : '#fff')};
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.3);
 `;

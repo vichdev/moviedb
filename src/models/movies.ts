@@ -2,9 +2,10 @@
 export interface IPropsMovies {
   movies?: Array<MovieInfo.Result>;
   setMovies: ([]) => void;
-  search?: string;
-  setSearch: (search: string) => void;
+  searchMovie?: string;
+  setSearchMovie: (search: string) => void;
   fetchData: (movie: string) => void;
+  fetchSearch: () => void;
 }
 
 export declare module MovieInfo {

@@ -7,11 +7,7 @@ import { useMovieContext } from '../../context/moviecontext';
 
 const Header: React.FC = () => {
   const location = useLocation();
-  const { search, setSearch } = useMovieContext();
-
-  const onTextChange = (event: { target: { value: string } }) => {
-    setSearch(event.target.value);
-  };
+  const { searchMovie, setSearchMovie, fetchSearch } = useMovieContext();
 
   return (
     <Styles.HeaderContainer>
@@ -26,11 +22,10 @@ const Header: React.FC = () => {
               <Styles.SearchInput
                 type="search"
                 placeholder="Procure seu filme aqui..."
-                value={search}
-                onChange={onTextChange}
+                onChange={(e) => setSearchMovie(e.target.value)}
               />
               <Styles.SearchButton>
-                <FaSearch />
+                <FaSearch onClick={fetchSearch} />
               </Styles.SearchButton>
             </Styles.SearchBox>
             <Styles.FavoriteButton to="/Favorites">
