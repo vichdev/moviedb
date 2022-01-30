@@ -1,4 +1,7 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+
+export const MovieLink = styled(Link)``;
 
 export const Movie = styled.div<{ isActive?: boolean; isFavorite?: boolean }>`
   display: flex;
@@ -9,7 +12,7 @@ export const Movie = styled.div<{ isActive?: boolean; isFavorite?: boolean }>`
   height: 530px;
   box-shadow: 0px 0px 50px 5px #000;
   cursor: pointer;
-  margin-bottom: 5rem;
+  margin-bottom: 4rem;
 
   &:hover {
     box-shadow: 0px 0px 5px 0.5px var(--red);
@@ -56,10 +59,6 @@ export const MovieTitle = styled.h2`
   width: 100%;
   max-width: 200px;
   color: #fff;
-`;
-
-export const MovieOverview = styled.p`
-  display: none;
 `;
 
 export const MovieRating = styled.p<{ color?: string }>`

@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { IPropsMovies, MovieInfo } from '../models/movies';
-import { api } from '../services/api';
 
 const MoviesContext = createContext<IPropsMovies>({} as IPropsMovies);
 
@@ -26,6 +25,25 @@ const Context: React.FC = ({ children }) => {
     setMovies(data.results);
   };
 
+  const fetchSelectedMovie = async (id: number) => {
+    const { data } = await axios.get(
+      // eslint-disable-next-line no-undef
+      `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US      `
+    );
+    // console.log(data);
+    setMovies(data.results);
+  };
+
+  const setVoteColor = (vote: number) => {
+    if (vote >= 8) {
+      return 'green';
+    } else if (vote >= 6) {
+      return 'orange';
+    } else {
+      return 'red';
+    }
+  };
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -37,8 +55,10 @@ const Context: React.FC = ({ children }) => {
         setMovies,
         fetchData,
         fetchSearch,
+        fetchSelectedMovie,
         searchMovie,
         setSearchMovie,
+        setVoteColor,
       }}
     >
       {children}

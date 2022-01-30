@@ -6,6 +6,8 @@ export interface IPropsMovies {
   setSearchMovie: (search: string) => void;
   fetchData: (movie: string) => void;
   fetchSearch: () => void;
+  fetchSelectedMovie: (id: number) => void;
+  setVoteColor: (vote: number) => string;
 }
 
 export declare module MovieInfo {

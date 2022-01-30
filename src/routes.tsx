@@ -1,8 +1,9 @@
-import React from "react";
-import { Route, Routes } from "react-router-dom";
-import Favorites from "./pages/Favorites";
-import Main from "./pages/Main";
-import SelectedMovie from "./pages/SelectedMovie";
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import { IPropsSelectedMovie } from './components/SelectedContent/types';
+import Favorites from './pages/Favorites';
+import Main from './pages/Main';
+import SelectedMovie from './pages/SelectedMovie';
 
 const RoutesPages: React.FC = () => {
   return (

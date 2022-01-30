@@ -34,10 +34,9 @@ export const PAnimated = styled.p`
 `;
 
 export const MoviesWrapper = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   justify-content: space-around;
-  margin-bottom: 5rem;
-  flex-wrap: wrap;
 `;
 
 export const MoviePopularity = styled.p``;
