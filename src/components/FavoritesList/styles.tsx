@@ -8,10 +8,10 @@ export const FavoritesContainer = styled.div`
   flex-direction: column;
   padding: 2rem;
   color: #fff;
-
-  h1 {
-    color: #fff;
-    font-size: 100px;
+  @media screen and (max-width: 600px) and (min-width: 320px) {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
   }
 `;
 
@@ -19,8 +19,11 @@ export const FavoritesList = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-content: space-around;
-`;
-
-export const FavoritesTitle = styled.h1`
-  font-size: 0.5rem;
+  @media screen and (max-width: 600px) and (min-width: 320px) {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
 `;

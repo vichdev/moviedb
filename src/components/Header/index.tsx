@@ -1,16 +1,18 @@
 import React from 'react';
 import * as Styles from './styles';
 import logo from '../../assets/logo.svg';
-import { FaSearch, FaHeart } from 'react-icons/fa';
+import { FaSearch, FaHeart, FaBars } from 'react-icons/fa';
 import { useLocation } from 'react-router-dom';
 import { useMovieContext } from '../../context/moviecontext';
+import ModalMobile from '../ModalMobile';
 
 const Header: React.FC = () => {
   const location = useLocation();
-  const { searchMovie, setSearchMovie, fetchSearch } = useMovieContext();
+  const { setSearchMovie, fetchSearch, setModal, modal } = useMovieContext();
 
   return (
     <Styles.HeaderContainer>
+      <ModalMobile />
       {location.pathname == '/' || location.pathname == '/SelectedMovie' ? (
         <Styles.Header>
           <Styles.LogoWrapper>
@@ -18,6 +20,7 @@ const Header: React.FC = () => {
             <Styles.LogoTitle to="/">MovieDB</Styles.LogoTitle>
           </Styles.LogoWrapper>
           <Styles.MenuWrapper>
+            <FaBars onClick={() => setModal(!modal)} />
             <Styles.SearchBox>
               <Styles.SearchInput
                 type="search"

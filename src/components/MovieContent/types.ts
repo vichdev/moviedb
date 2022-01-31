@@ -5,4 +5,5 @@ export type IPropsMovieContent = {
   vote_average: number;
   key?: number;
   movie?: Array<[]>;
+  checked?: boolean;
 };

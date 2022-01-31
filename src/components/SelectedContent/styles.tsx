@@ -9,6 +9,10 @@ export const SelectedMovieContainer = styled.div`
   padding: 2rem;
   justify-content: flex-start;
   color: #fff;
+  @media screen and (max-width: 600px) and (min-width: 320px) {
+    width: 100%;
+    justify-content: center;
+  }
 `;
 
 export const SelectedMovie = styled.div`
@@ -16,6 +20,10 @@ export const SelectedMovie = styled.div`
   width: 100%;
   justify-content: space-around;
   align-items: center;
+  @media screen and (max-width: 600px) and (min-width: 320px) {
+    flex-direction: column;
+    width: 100%;
+  }
 `;
 
 export const InformationWrapper = styled.div`
@@ -24,6 +32,10 @@ export const InformationWrapper = styled.div`
   justify-content: space-evenly;
   height: 300px;
   width: 600px;
+  @media screen and (max-width: 600px) and (min-width: 320px) {
+    flex-direction: column;
+    width: 100%;
+  }
 `;
 
 export const DescriptionWrapper = styled.div`

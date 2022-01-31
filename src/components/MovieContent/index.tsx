@@ -1,7 +1,5 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import { FaHeart } from 'react-icons/fa';
-import { FiHeart } from 'react-icons/fi';
+import React from 'react';
+import { FaHeart, FaTrash } from 'react-icons/fa';
 import { useMovieContext } from '../../context/moviecontext';
 import * as Styles from './styles';
 import { IPropsMovieContent } from './types';
@@ -10,22 +8,34 @@ const MovieContent: React.FC<IPropsMovieContent> = ({
   id,
   title,
   poster,
-  key,
   vote_average,
-  movie,
+  checked,
 }) => {
-  const { setVoteColor, movies, fetchSelectedMovie, addFavorite } =
-    useMovieContext();
+  const {
+    setVoteColor,
+    fetchSelectedMovie,
+    addFavorite,
+    unavailable,
+    removeFavorites,
+  } = useMovieContext();
 
   return (
     <Styles.Movie onClick={() => fetchSelectedMovie(id as number)}>
       <Styles.MovieLink to="/SelectedMovie">
         <Styles.MovieImg
-          src={`https://image.tmdb.org/t/p/w300${poster}`}
+          src={
+            poster ? `https://image.tmdb.org/t/p/w300${poster}` : unavailable
+          }
           alt={`Capa do filme: ${title} `}
         />
       </Styles.MovieLink>
-      <FaHeart onClick={() => addFavorite(id as number)} />
+      {checked && location.pathname === '/Favorites' ? (
+        <Styles.RemoveFavorites>
+          <FaTrash onClick={() => removeFavorites(id as number)} />
+        </Styles.RemoveFavorites>
+      ) : (
+        <FaHeart onClick={() => addFavorite(id as number)} />
+      )}
       <Styles.MovieDescriptionWrapper>
         <Styles.MovieTitle>{title}</Styles.MovieTitle>
         <Styles.MovieRating color={setVoteColor(vote_average)}>

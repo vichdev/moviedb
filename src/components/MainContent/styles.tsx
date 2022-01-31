@@ -9,6 +9,11 @@ export const MovieContainer = styled.div`
   padding: 2rem;
   justify-content: flex-start;
   color: #fff;
+  @media screen and (max-width: 600px) and (min-width: 300px) {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export const MainTitle = styled.h1`
@@ -37,6 +42,10 @@ export const MoviesWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-content: space-around;
+  @media screen and (max-width: 600px) and (min-width: 320px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 export const MoviePopularity = styled.p``;

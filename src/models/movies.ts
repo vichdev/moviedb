@@ -9,9 +9,15 @@ export interface IPropsMovies {
   fetchSelectedMovie: (id: number) => void;
   setVoteColor: (vote: number) => string;
   addFavorite: (id: number) => void;
+  removeFavorites: (id: number) => void;
   favorites?: Array<MovieInfo.Result>;
   setFavorites: (favorties: any) => void;
   content?: MovieInfo.Result;
+  unavailable?: string;
+  modal?: boolean;
+  setModal: (isOpen: boolean) => void;
+  isFavorite?: number;
+  setIsFavorite: (id: number) => void;
 }
 
 export declare module MovieInfo {

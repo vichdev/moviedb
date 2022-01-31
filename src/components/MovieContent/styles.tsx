@@ -1,7 +1,12 @@
+import { FaTrash } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const MovieLink = styled(Link)``;
+
+export const AnimationDisplay = keyframes`
+0% {opacity: 0};
+100% {opacity: 1}`;
 
 export const Movie = styled.div<{ isActive?: boolean; isFavorite?: boolean }>`
   display: flex;
@@ -13,6 +18,11 @@ export const Movie = styled.div<{ isActive?: boolean; isFavorite?: boolean }>`
   box-shadow: 0px 0px 50px 5px #000;
   cursor: pointer;
   margin-bottom: 4rem;
+  animation-name: ${AnimationDisplay};
+  animation-duration: 1.8s;
+  animation-fill-mode: forwards;
+  transition: ${AnimationDisplay} 4s;
+  transition: 0.3s;
 
   &:hover {
     box-shadow: 0px 0px 5px 0.5px var(--red);
@@ -26,7 +36,7 @@ export const Movie = styled.div<{ isActive?: boolean; isFavorite?: boolean }>`
     float: right;
     top: 10px;
     right: 10px;
-    color: ${(props) => (props.isActive ? 'yellow' : 'red')};
+    color: red;
     z-index: 10;
     font-size: 20px;
     transition: 0.3s;
@@ -35,6 +45,21 @@ export const Movie = styled.div<{ isActive?: boolean; isFavorite?: boolean }>`
     &:hover {
       opacity: 1;
     }
+  }
+  @media screen and (max-width: 600px) and (min-width: 320px) {
+    width: 100%;
+  }
+`;
+
+export const RemoveFavorites = styled.div`
+  svg {
+    position: absolute;
+    float: right;
+    top: 10px;
+    right: 10px;
+    color: red;
+    font-size: 20px;
+    transition: 0.3s;
   }
 `;
 
@@ -48,7 +73,6 @@ export const MovieDescriptionWrapper = styled.div`
 `;
 
 export const MovieImg = styled.img`
-  z-index: 9;
   svg {
     display: block;
   }

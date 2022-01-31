@@ -19,6 +19,15 @@ export const LogoWrapper = styled.div`
   width: 100%;
   max-width: 300px;
   justify-content: space-around;
+  @media screen and (max-width: 600px) and (min-width: 320px) {
+    width: 100%;
+    max-width: 200px;
+    justify-content: space-evenly;
+    svg {
+      display: block;
+      margin-right: 5px;
+    }
+  }
 `;
 
 export const LogoTitle = styled(Link)`
@@ -32,11 +41,18 @@ export const LogoTitle = styled(Link)`
     color: var(--text);
     opacity: 0.8;
   }
+  @media screen and (max-width: 600px) and (min-width: 320px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export const HeaderLogo = styled.img`
   width: 90px;
   height: 90px;
+  @media screen and (max-width: 600px) and (min-width: 320px) {
+    width: 40px;
+    height: 40px;
+  }
 `;
 
 export const MenuWrapper = styled.div`
@@ -52,13 +68,30 @@ export const MenuWrapper = styled.div`
       color: red;
     }
   }
+  @media screen and (max-width: 600px) and (min-width: 320px) {
+    width: 100px;
+    svg {
+      width: 20px;
+      display: block;
+    }
+  }
 `;
 
-export const FavoriteButton = styled(Link)``;
+export const FavoriteButton = styled(Link)`
+  @media screen and (max-width: 600px) and (min-width: 320px) {
+    svg {
+      display: none;
+    }
+  }
+`;
 
 export const FavoriteTitle = styled.h1`
   color: var(--text);
   text-shadow: 0.1em 0.1em 0 #000;
+
+  @media screen and (max-width: 600px) and (min-width: 320px) {
+    font-size: 1rem;
+  }
 `;
 
 export const SearchBox = styled.div`
@@ -69,6 +102,10 @@ export const SearchBox = styled.div`
   padding: 1px;
   align-items: center;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  @media screen and (max-width: 600px) and (min-width: 320px) {
+    display: none;
+  }
 `;
 
 export const SearchInput = styled.input`

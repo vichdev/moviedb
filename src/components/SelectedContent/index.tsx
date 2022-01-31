@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { FaStar } from 'react-icons/fa';
 import { useMovieContext } from '../../context/moviecontext';
 import * as Styles from './styles';

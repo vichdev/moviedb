@@ -10,6 +10,9 @@ const Context: React.FC = ({ children }) => {
   const [searchMovie, setSearchMovie] = useState<string>('');
   const [favorites, setFavorites] = useState<Array<MovieInfo.Result>>([]);
   const [content, setContent] = useState<MovieInfo.Result>();
+  const [modal, setModal] = useState<boolean>(false);
+  const [isFavorite, setIsFavorite] = useState<number>();
+  const unavailable = 'https://www.movienewz.com/img/films/poster-holder.jpg';
 
   const fetchData = async () => {
     const { data } = await axios.get(
@@ -24,6 +27,7 @@ const Context: React.FC = ({ children }) => {
       `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&query=${searchMovie}&page=1&include_adult=false`
     );
     setMovies(data.results);
+    setModal(!modal);
   };
 
   const fetchSelectedMovie = async (movie_id: number) => {
@@ -41,7 +45,12 @@ const Context: React.FC = ({ children }) => {
       .then((response) => {
         const favoriteList = [...favorites, response.data];
         setFavorites(favoriteList);
+        setIsFavorite(id);
       });
+  };
+
+  const removeFavorites = (id: MovieInfo.Result['id']) => {
+    setFavorites((prev) => prev.filter((item) => item.id !== id));
   };
 
   const setVoteColor = (vote: number) => {
@@ -73,6 +82,12 @@ const Context: React.FC = ({ children }) => {
         setFavorites,
         favorites,
         content,
+        unavailable,
+        removeFavorites,
+        modal,
+        setModal,
+        isFavorite,
+        setIsFavorite,
       }}
     >
       {children}
