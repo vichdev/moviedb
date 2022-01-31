@@ -4,7 +4,9 @@ import { useMovieContext } from '../../context/moviecontext';
 import MovieContent from '../MovieContent';
 
 const MainContent: React.FC = () => {
-  const { movies } = useMovieContext();
+  const { movies, favorites } = useMovieContext();
+
+  console.log(favorites);
 
   return (
     <Styles.MovieContainer>
@@ -19,7 +21,6 @@ const MainContent: React.FC = () => {
               poster={c.poster_path}
               title={c.title}
               vote_average={c.vote_average}
-              overview={c.overview}
             />
           ))}
       </Styles.MoviesWrapper>

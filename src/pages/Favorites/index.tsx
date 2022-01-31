@@ -1,10 +1,12 @@
-import React from "react";
-import Header from "../../components/Header";
+import React from 'react';
+import FavoritesList from '../../components/FavoritesList';
+import Header from '../../components/Header';
 
 const Favorites: React.FC = () => {
   return (
     <>
       <Header />
+      <FavoritesList />
     </>
   );
 };

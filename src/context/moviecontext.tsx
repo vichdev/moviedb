@@ -2,7 +2,6 @@
 import axios from 'axios';
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { IPropsMovies, MovieInfo } from '../models/movies';
-import { api } from '../services/api';
 
 const MoviesContext = createContext<IPropsMovies>({} as IPropsMovies);
 
@@ -35,12 +34,14 @@ const Context: React.FC = ({ children }) => {
   };
 
   const addFavorite = async (id: number) => {
-    const { data } = await axios.get(
-      `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
-    );
-    setFavorites(data);
-    setFavorites([...favorites, data] as any);
-    console.log(favorites);
+    await axios
+      .get(
+        `https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
+      )
+      .then((response) => {
+        const favoriteList = [...favorites, response.data];
+        setFavorites(favoriteList);
+      });
   };
 
   const setVoteColor = (vote: number) => {
