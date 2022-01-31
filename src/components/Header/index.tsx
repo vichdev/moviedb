@@ -19,8 +19,8 @@ const Header: React.FC = () => {
             <Styles.HeaderLogo src={logo} />
             <Styles.LogoTitle to="/">MovieDB</Styles.LogoTitle>
           </Styles.LogoWrapper>
+          <FaBars onClick={() => setModal(!modal)} />
           <Styles.MenuWrapper>
-            <FaBars onClick={() => setModal(!modal)} />
             <Styles.SearchBox>
               <Styles.SearchInput
                 type="search"

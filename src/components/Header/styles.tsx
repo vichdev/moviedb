@@ -11,6 +11,17 @@ export const Header = styled.header`
   align-items: center;
   justify-content: space-between;
   color: #fff;
+  svg:nth-child(2) {
+    display: none;
+  }
+  @media screen and (max-width: 600px) and (min-width: 320px) {
+    justify-content: space-between;
+    svg:nth-child(2) {
+      display: block;
+      width: 80px;
+      font-size: 1.5rem;
+    }
+  }
 `;
 
 export const LogoWrapper = styled.div`
@@ -63,13 +74,14 @@ export const MenuWrapper = styled.div`
   svg {
     font-size: 20px;
     color: #fff;
+    display: block;
     transition: 0.4s;
     &:hover {
       color: red;
     }
   }
   @media screen and (max-width: 600px) and (min-width: 320px) {
-    width: 100px;
+    display: none;
     svg {
       width: 20px;
       display: block;
