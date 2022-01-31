@@ -10,7 +10,7 @@ Além disto é bom ter um editor para trabalhar com o código como [VSCode](http
 ### 🎲 Rodando a Aplicação ()
 
 ```bash
-# Clone este repositório
+# Clone este repositório ou baixe-o do repositório
 $ git clone <https://github.com/vichdev/moviedb>
 
 # Acesse a pasta do projeto no terminal/GitBash
