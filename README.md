@@ -1,7 +1,7 @@
 <h1 align="center">MovieDB - Teste Avonale</h1>
 
 ## Descrição do Projeto
-<p align="center">Projeto desenvolvido em ReactJS, utilizando HTML, CSS, JAVASCRIPT, TYPESCRIPT, STYLED-COMPONENTS como biblioteca CSS e responsivo para celulares. </p>
+<p align="center">Projeto desenvolvido em ReactJS, utilizando HTML, CSS, JAVASCRIPT, TYPESCRIPT, STYLED-COMPONENTS como biblioteca CSS, utilizando contextAPI como gerenciamento de estado, além disso, responsividade para celulares. </p>
 
 ### Pré-requisitos
 
