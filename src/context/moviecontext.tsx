@@ -27,7 +27,7 @@ const Context: React.FC = ({ children }) => {
       `https://api.themoviedb.org/3/search/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&query=${searchMovie}&page=1&include_adult=false`
     );
     setMovies(data.results);
-    setModal(!modal);
+    setModal(modal);
   };
 
   const fetchSelectedMovie = async (movie_id: number) => {

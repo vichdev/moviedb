@@ -15,11 +15,11 @@ export const ModalContainer = styled.div<{ isOpen: boolean }>`
   overflow-y: hidden;
 `;
 
-export const ModalContent = styled.div<{ isOpen: boolean }>`
+export const ModalContent = styled.div`
   width: 300px;
   height: 300px;
   background: var(--background);
-  display: ${(props) => (props.isOpen ? 'flex' : 'none')};
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;

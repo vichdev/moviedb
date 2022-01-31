@@ -8,7 +8,7 @@ const ModalMobile: React.FC = () => {
   const { modal, setSearchMovie, fetchSearch, setModal } = useMovieContext();
   return (
     <Styles.ModalContainer isOpen={modal!}>
-      <Styles.ModalContent isOpen={modal!}>
+      <Styles.ModalContent>
         <IoIosClose onClick={() => setModal(!modal)} />
         <Styles.SearchWrapper>
           <Styles.SearchInput
