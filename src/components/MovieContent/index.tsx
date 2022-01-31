@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaHeart } from 'react-icons/fa';
 import { FiHeart } from 'react-icons/fi';
 import { useMovieContext } from '../../context/moviecontext';
@@ -12,23 +12,27 @@ const MovieContent: React.FC<IPropsMovieContent> = ({
   poster,
   key,
   vote_average,
+  movie,
 }) => {
-  const { setVoteColor, setMovies, fetchSelectedMovie } = useMovieContext();
-  const [favorite, setFavorite] = useState<boolean>(false);
+  const { setVoteColor, movies, fetchSelectedMovie, addFavorite } =
+    useMovieContext();
 
   return (
-    <Styles.MovieLink to="/SelectedMovie">
-      <Styles.Movie>
-        <Styles.MovieImg src={`https://image.tmdb.org/t/p/w300${poster}`} />
-        <FaHeart />
-        <Styles.MovieDescriptionWrapper>
-          <Styles.MovieTitle>{title}</Styles.MovieTitle>
-          <Styles.MovieRating color={setVoteColor(vote_average)}>
-            {vote_average}
-          </Styles.MovieRating>
-        </Styles.MovieDescriptionWrapper>
-      </Styles.Movie>
-    </Styles.MovieLink>
+    <Styles.Movie onClick={() => fetchSelectedMovie(id as number)}>
+      <Styles.MovieLink to="/SelectedMovie">
+        <Styles.MovieImg
+          src={`https://image.tmdb.org/t/p/w300${poster}`}
+          alt={`Capa do filme: ${title} `}
+        />
+      </Styles.MovieLink>
+      <FaHeart onClick={() => addFavorite(id as number)} />
+      <Styles.MovieDescriptionWrapper>
+        <Styles.MovieTitle>{title}</Styles.MovieTitle>
+        <Styles.MovieRating color={setVoteColor(vote_average)}>
+          {vote_average}
+        </Styles.MovieRating>
+      </Styles.MovieDescriptionWrapper>
+    </Styles.Movie>
   );
 };
 

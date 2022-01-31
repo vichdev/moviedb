@@ -8,6 +8,10 @@ export interface IPropsMovies {
   fetchSearch: () => void;
   fetchSelectedMovie: (id: number) => void;
   setVoteColor: (vote: number) => string;
+  addFavorite: (id: number) => void;
+  favorites?: Array<MovieInfo.Result>;
+  setFavorites: (favorties: any) => void;
+  content?: MovieInfo.Result;
 }
 
 export declare module MovieInfo {
@@ -33,5 +37,4 @@ export declare module MovieInfo {
     total_results: number;
     total_pages: number;
   }
-
 }

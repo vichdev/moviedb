@@ -16,7 +16,7 @@ export const Movie = styled.div<{ isActive?: boolean; isFavorite?: boolean }>`
 
   &:hover {
     box-shadow: 0px 0px 5px 0.5px var(--red);
-    top: -5px;
+    top: -4px;
     svg {
       display: block;
     }

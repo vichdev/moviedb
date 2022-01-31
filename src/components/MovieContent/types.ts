@@ -1,8 +1,9 @@
 export type IPropsMovieContent = {
-  id: number;
+  id?: number;
   title: string;
   poster: string;
   vote_average: number;
-  key: number;
+  key?: number;
   overview: string;
-}
+  movie?: Array<[]>;
+};
